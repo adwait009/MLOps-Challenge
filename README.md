@@ -5,26 +5,18 @@ This project is part of a challenge series from End-to-End MLOps with Azure Mach
 
 ## Notes
 
-- Create a dataset asset
+- Create a data asset
+[az ml data (V2 ](https://learn.microsoft.com/en-us/cli/azure/ml/data?view=azure-cli-latest)
+[CLI (v2) data YAML schema](https://github.com/Azure/azureml-examples/tree/main/cli/assets/data)
 
-To create a dataset asset from a local file, you'll need to:
-
-- Create a YAML specification file referring to the local file.
-- Run the az ml dataset create command.
-
-In the YAML file you'll include:
-
-- The name of the dataset asset as it will show in the workspace.
-- The version of the dataset asset.
-- The local path to the data file.
-- Optionally, you can add a description.
-
+e.g.
 ``` yml
-$schema: https://azuremlschemas.azureedge.net/latest/asset.schema.json
-name: diabetes-dev-folder
+$schema: https://azuremlschemas.azureedge.net/latest/data.schema.json
+name: diabetes-dev-file
 version: 1
-local_path: diabetes-dev.csv
-description: Dataset pointing to customer churn CSV on local computer. Data will be uploaded to default datastore.
+description: Dataset created from local file.
+type: uri_file
+path: experimentation/data/diabetes-dev.csv
 ```
 
 ## Learning Resources
@@ -34,3 +26,5 @@ description: Dataset pointing to customer churn CSV on local computer. Data will
 [ az ml job reference documentation](https://learn.microsoft.com/en-us/cli/azure/ml/job?view=azure-cli-latest)
 
 [ Manage workspace assets with CLI (v2)](https://learn.microsoft.com/en-us/training/modules/create-azure-machine-learning-resources-cli-v2/4-manage-workspace-assets)
+
+At the time of writing this Documentation Azure CLI(V2)'s documentation in the above link had some outdated documentation of (V)1 
