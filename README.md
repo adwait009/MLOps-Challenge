@@ -6,7 +6,7 @@ This project is part of a challenge series from End-to-End MLOps with Azure Mach
 ## Notes
 
 - Create a data asset
-[az ml data (V2 ](https://learn.microsoft.com/en-us/cli/azure/ml/data?view=azure-cli-latest)
+[az ml data (V2)](https://learn.microsoft.com/en-us/cli/azure/ml/data?view=azure-cli-latest)
 [CLI (v2) data YAML schema](https://github.com/Azure/azureml-examples/tree/main/cli/assets/data)
 
 e.g.
@@ -17,6 +17,24 @@ version: 1
 description: Dataset created from local file.
 type: uri_file
 path: experimentation/data/diabetes-dev.csv
+```
+
+- Jobs
+
+[CLI (v2) command job YAML schema](https://learn.microsoft.com/en-us/azure/machine-learning/reference-yaml-job-command?view=azureml-api-2)
+[Example Jobs](https://github.com/Azure/azureml-examples/tree/main/cli/jobs)
+
+e.g.
+```yml
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+code: 
+  local_path: src
+command: >-
+  python main.py 
+environment: azureml:basic-env-scikit:1
+compute: azureml:testdev-vm
+experiment_name: customer-churn
+description: Train a classification model on a sample customer dataset.
 ```
 
 ## Learning Resources
