@@ -69,6 +69,7 @@ At the time of writing this Documentation Azure CLI(V2)'s documentation in the a
 
 ### Folder Structure
 The proposed top-level folder structure for a MLOps (machine learning operations) repository is illustrated in the following diagram:
+
 ![repository-structure](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/cloud-scale-analytics/images/repository-structure.png)
 
 The following purposes apply to each folder in the repository:
